@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 
 const app = express();
 
+
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -60,5 +61,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(process.env.APP_PORT, () => {
-    console.log(`O servidor está executando na porta ${APP_PORT}`);
+    console.log(`O servidor está executando na porta ${process.env.APP_PORT}`);
 });

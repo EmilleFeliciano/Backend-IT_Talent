@@ -1,10 +1,11 @@
 #imagem oficial do Node.js
 FROM node:14
 
-#diretório de trabalho
-WORKDIR /app
+ENV APP_PORT=8080
 
-COPY package*.json ./
+WORKDIR app
+
+COPY package.json .
 
 RUN npm install
 
@@ -12,4 +13,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["npm", "start"]
+CMD [ "npm", "start" ]
