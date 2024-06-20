@@ -3,7 +3,7 @@ FROM node:14
 
 ENV APP_PORT=8080
 
-WORKDIR app
+WORKDIR /app
 
 COPY package.json .
 
