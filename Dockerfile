@@ -1,16 +1,13 @@
 #imagem oficial do Node.js
 FROM node:14
 
-ENV APP_PORT=8080
+WORKDIR /usr/src/app
 
-WORKDIR /app
-
-COPY package.json .
+COPY package*.json ./
+COPY . .
 
 RUN npm install
 
-COPY . .
-
 EXPOSE 8080
 
-CMD [ "npm", "start" ]
+CMD ["npm", "start"]

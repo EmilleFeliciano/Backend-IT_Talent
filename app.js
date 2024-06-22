@@ -5,10 +5,15 @@ import { getAluno, getAlunos, createAluno } from './database.js';
 import dotenv from 'dotenv';
 
 const app = express();
-
+const PORT = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 app.use(cors());
+
+app.get('/alunos', (req, res) => {
+    // Código para manipular a rota /alunos
+    res.send('Emille Feliciano');
+});
 
 // Endpoint raiz
 app.get("/", (req, res) => {
@@ -60,6 +65,6 @@ app.use((err, req, res, next) => {
     });
 });
 
-app.listen(process.env.APP_PORT, () => {
-    console.log(`O servidor está executando na porta ${process.env.APP_PORT}`);
+app.listen(PORT, () => {
+    console.log(`Servidor está executando na porta ${PORT}`);
 });
